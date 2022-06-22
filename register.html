@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Netflix</title>
+        <script src="js/register.js" type="text/javascript"></script>
+        <script src="js/languageSwitcherRegister.js" type="text/javascript"></script>
+        <script src="dbregister.js"></script>
+        <link rel="stylesheet" href="css/register.css">
+    </head>
+    
+    <body onload="setUpLanguage()" onresize="updateView()">
+        <div class="background-wrapper">
+            <img class="background" src="https://assets.nflxext.com/ffe/siteui/vlv3/5039d301-b891-47b2-b755-553e5c874395/e792888a-2c70-4a78-9dfd-b8a26e767ae4/BR-en-20200210-popsignuptwoweeks-perspective_alpha_website_small.jpg" srcset="https://assets.nflxext.com/ffe/siteui/vlv3/5039d301-b891-47b2-b755-553e5c874395/e792888a-2c70-4a78-9dfd-b8a26e767ae4/BR-en-20200210-popsignuptwoweeks-perspective_alpha_website_small.jpg 1000w, https://assets.nflxext.com/ffe/siteui/vlv3/5039d301-b891-47b2-b755-553e5c874395/e792888a-2c70-4a78-9dfd-b8a26e767ae4/BR-en-20200210-popsignuptwoweeks-perspective_alpha_website_medium.jpg 1500w, https://assets.nflxext.com/ffe/siteui/vlv3/5039d301-b891-47b2-b755-553e5c874395/e792888a-2c70-4a78-9dfd-b8a26e767ae4/BR-en-20200210-popsignuptwoweeks-perspective_alpha_website_large.jpg 1800w" alt>
+        </div>
+        <div id="app">
+            <div id="header">
+                <a href="#">
+                    <img id="logo" src="https://logodownload.org/wp-content/uploads/2014/10/netflix-logo-5.png">
+                </a>
+            </div>
+            <div id="container">
+                <div class="form" id="log-in-form">
+                    <div class="label-container">
+                        <h2 id="sign-in-text"></h1>
+                    </div>
+                    <div class="box-container" id="email-container">
+                        <input class="field" id="email-field" name="email" type="text" oninput="update('email-field', 'email-label', 'email-inputError')" onfocus="inputOnFocus('email-field', 'email-label', 'email-container')" onblur="inputOnBlur('email-field', 'email-label', 'email-container', 'email-inputError')" required>
+                        <label class="label" id="email-label" for="email-field"></label>
+                    </div>
+                    <div class="inputError" id="email-inputError"></div>
+                    <div class="box-container" id="username-container">
+                        <input class="field" id="username-field" name="username" type="text" oninput="update('username-field', 'username-label', 'username-inputError')" onfocus="inputOnFocus('username-field', 'username-label', 'username-container')" onblur="inputOnBlur('username-field', 'username-label', 'username-container', 'username-inputError')" required>
+                        <label class="label" id="username-label" for="username-field"></label>
+                    </div>
+                    <div class="inputError" id="username-inputError"></div>
+                    <div class="box-container" id="pwd-container">
+                        <input class="field" id="pwd-field" name="password" type="password" oninput="update('pwd-field', 'pwd-label', 'pwd-inputError')" onfocus="inputOnFocus('pwd-field', 'pwd-label', 'pwd-container')" onblur="inputOnBlur('pwd-field', 'pwd-label', 'pwd-container', 'pwd-inputError')" required>
+                        <label class="label" id="pwd-label" for="pwd-field"></label>
+                    </div>
+                    <div class="inputError" id="pwd-inputError"></div>
+                    <div class="box-container" id="cpwd-container">
+                        <input class="field" id="cpwd-field" name="cpassword" type="password" oninput="update('cpwd-field', 'cpwd-label', 'cpwd-inputError')" onfocus="inputOnFocus('cpwd-field', 'cpwd-label', 'cpwd-container')" onblur="inputOnBlur('cpwd-field', 'cpwd-label', 'cpwd-container', 'cpwd-inputError')" required>
+                        <label class="label" id="cpwd-label" for="cpwd-field"></label>
+                    </div>
+                    <div class="inputError" id="cpwd-inputError"></div>
+                    <div class="box-container" id="login-button-container">
+                        <input id="login-button" type="submit" value="Sign Up" onclick="register()">
+                    </div>
+                    <div class="checkbox-row">
+
+                        
+                        <a href="#">
+                            <label id="help"></label>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sign-up">
+                    <span id="sign-up"></span>
+                    <a class="sign-up-link" id="sign-up-link" href="login.html"></a>
+                </div>
+            </div>
+            <footer>
+                <div class="footer" id="footer">
+                    <p class="footer-header">
+                        <span id="footer-header">Any Queries? Call</span>
+                        <a class="footer-link">+91 452 2482240</a>
+                    </p>
+
+                    <div class="language-selector-container">
+                        <div class="language-selector-boundaries">
+                            <select name="language" id="language-selector" onchange="loadTexts(getSelectedLanguage())">
+                                <option value="en">English</option>
+                                <option value="ta">Tamil</option>
+                            </select>
+                            <img class="globe-icon" src="https://climefish.eu/wp-content/uploads/sites/18/2017/08/icon-globe-400px.png">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
